@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Darknet Dominators Futuristic</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      color: #00ffcc;
+      overflow-x: hidden;
+      animation: changeBackground 30s infinite;
+      background-color: #0f0f0f;
+    }
+
+    @keyframes changeBackground {
+      0% { background-color: #0f0f0f; }
+      5% { background-color: #001f3d; }
+      10% { background-color: #0a2f67; }
+      15% { background-color: #4c80a0; }
+      20% { background-color: #2a5d7a; }
+      25% { background-color: #2e3c59; }
+      30% { background-color: #5b2b7a; }
+      35% { background-color: #6a7d8f; }
+      40% { background-color: #00b8f4; }
+      45% { background-color: #001f3d; }
+      50% { background-color: #7400b8; }
+      55% { background-color: #00f0e3; }
+      60% { background-color: #ff0033; }
+      65% { background-color: #8e44ad; }
+      70% { background-color: #7d3c98; }
+      75% { background-color: #0d66b2; }
+      80% { background-color: #283747; }
+      85% { background-color: #f39c12; }
+      90% { background-color: #e74c3c; }
+      95% { background-color: #3498db; }
+      100% { background-color: #f39c12; }
+    }
+
+    /* Chatbot Styles */
+    #chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 350px;
+      height: 450px;
+      background-color: rgba(0, 0, 0, 0.8);
+      border-radius: 10px;
+      padding: 15px;
+      display: none;
+      box-shadow: 0 4px 10px rgba(0, 255, 204, 0.3);
+      z-index: 1000;
+    }
+
+    #chatbot-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #00ffcc;
+      font-size: 1.2rem;
+    }
+
+    #chatbot-header h2 {
+      margin: 0;
+    }
+
+    #chatbot-header button {
+      background-color: transparent;
+      color: #00ffcc;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    #chatbot-body {
+      height: 340px;
+      overflow-y: scroll;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .message {
+      margin-bottom: 10px;
+    }
+
+    .message.user {
+      text-align: right;
+    }
+
+    .message.bot {
+      text-align: left;
+      color: #00b8f4;
+    }
+
+    .message p {
+      background-color: #111;
+      padding: 10px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+
+    .message.user p {
+      background-color: #00ffcc;
+      color: #0f0f0f;
+    }
+
+    .message.bot p {
+      background-color: #111;
+      color: #00ffcc;
+    }
+
+    #chatbot-input {
+      width: 100%;
+      padding: 10px;
+      background-color: #111;
+      border: 1px solid #00ffcc;
+      color: #00ffcc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    #chatbot-send {
+      width: 100%;
+      padding: 10px;
+      background-color: #00ffcc;
+      border: none;
+      color: #0f0f0f;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #chatbot-send:hover {
+      background-color: #00e6b8;
+    }
+
+    /* Main Styles */
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      border-bottom: 2px solid #00ffcc;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      text-shadow: 0 0 15px #00ffcc;
+      animation: glitch 1s infinite alternate;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    nav {
+      text-align: center;
+      padding: 15px 0;
+      background-color: #111;
+      box-shadow: 0 2px 8px rgba(0, 255, 204, 0.2);
+    }
+
+    nav a {
+      color: #00ffcc;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #00ffcc;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      padding: 40px 20px;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #000;
+      color: #00ffcc;
+      padding: 30px 10px;
+      font-size: 0.9rem;
+      border-top: 2px solid #00ffcc;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Darknet Dominators</h1>
+    <p>Master the art of ethical hacking & cybersecurity</p>
+  </header>
+
+  <nav>
+    <a href="#courses">Courses</a>
+    <a href="#tools">Tools</a>
+    <a href="#blog">Blog</a>
+    <a href="#tech">Technology</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section id="courses">
+      <h2>Free Programming Courses</h2>
+      <div class="course"><a href="https://www.freecodecamp.org/">FreeCodeCamp</a> - Learn JavaScript, Python, and web development.</div>
+      <div class="course"><a href="https://www.codecademy.com/">Codecademy</a> - Interactive courses on many tech topics.</div>
+      <div class="course"><a href="https://www.udemy.com/">Udemy</a> - Affordable video courses.</div>
+    </section>
+
+    <section id="tools">
+      <h2>Hacker Tools & Resources</h2>
+      <div class="tool"><a href="https://nmap.org">Nmap</a> - Network scanning and port auditing tool.</div>
+      <div class="tool"><a href="https://www.kali.org/">Kali Linux</a> - The ultimate hacking OS.</div>
+      <div class="tool"><a href="https://www.exploit-db.com/">Exploit DB</a> - Archive of public exploits and vulnerabilities.</div>
+    </section>
+
+    <section id="blog">
+      <h2>Latest Blogs on Ethical Hacking</h2>
+      <div class="blog"><a href="https://www.hackerearth.com/blog/">HackerEarth</a> - Articles on ethical hacking and cybersecurity trends.</div>
+      <div class="blog"><a href="https://www.securityweek.com/">Security Week</a> - News and analysis on cybersecurity.</div>
+    </section>
+
+    <section id="tech">
+      <h2>Leading Technology Companies</h2>
+      <ul>
+        <li><a href="https://www.microsoft.com">Microsoft</a></li>
+        <li><a href="https://www.google.com">Google</a></li>
+        <li><a href="https://www.meta.com">Meta</a></li>
+        <li><a href="https://www.asus.com">Asus</a></li>
+        <li><a href="https://www.dell.com">Dell</a></li>
+        <li><a href="https://www.alienware.com">Alienware</a></li>
+        <li><a href="https://www.hp.com">HP</a></li>
+        <li><a href="https://www.lenovo.com">Lenovo</a></li>
+        <li><a href="https://www.samsung.com">Samsung</a></li>
+        <li><a href="https://www.apple.com">Apple</a></li>
+        <!-- Add more as needed -->
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form action="#">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Darknet Dominators. All rights reserved.</p>
+    <p><a href="#">Back to top</a> | Follow us on <a href="https://twitter.com">X</a> / <a href="https://discord.com">Discord</a></p>
+    <p><em>Disclaimer: For educational use only. Always act ethically.</em></p>
+  </footer>
+
+  <!-- Chatbot -->
+  <div id="chatbot">
+    <div id="chatbot-header">
+      <h2>AI Chatbot</h2>
+      <button onclick="toggleChatbot()">X</button>
+    </div>
+    <div id="chatbot-body">
+      <div class="message bot">
+        <p>Hello! How can I assist you with ethical hacking today?</p>
+      </div>
+    </div>
+    <input type="text" id="chatbot-input" placeholder="Type your message..." />
+    <button id="chatbot-send" onclick="sendMessage()">Send</button>
+  </div>
+
+  <!-- Button to toggle chatbot -->
+  <button onclick="toggleChatbot()" style="position: fixed; bottom: 10px; right: 10px; padding: 10px 20px; background-color: #00ffcc; color: #0f0f0f; border: none; border-radius: 5px; cursor: pointer;">
+    Chat with us
+  </button>
+
+  <script>
+    // Toggle chatbot visibility
+    function toggleChatbot() {
+      const chatbot = document.getElementById('chatbot');
+      chatbot.style.display = (chatbot.style.display === 'none' || chatbot.style.display === '') ? 'block' : 'none';
+    }
+
+    // Handle sending messages
+    function sendMessage() {
+      const input = document.getElementById('chatbot-input');
+      const message = input.value.trim();
+
+      if (message === '') return;
+
+      const userMessage = document.createElement('div');
+      userMessage.classList.add('message', 'user');
+      userMessage.innerHTML = `<p>${message}</p>`;
+      document.getElementById('chatbot-body').appendChild(userMessage);
+
+      // Simulate bot response
+      setTimeout(() => {
+        const botMessage = document.createElement('div');
+        botMessage.classList.add('message', 'bot');
+        botMessage.innerHTML = `<p>I'm here to help! Ask me anything about ethical hacking!</p>`;
+        document.getElementById('chatbot-body').appendChild(botMessage);
+        document.getElementById('chatbot-body').scrollTop = document.getElementById('chatbot-body').scrollHeight;
+      }, 1000);
+
+      input.value = ''; // Clear input field
+      document.getElementById('chatbot-body').scrollTop = document.getElementById('chatbot-body').scrollHeight;
+    }
+  </script>
+</body>
+</html>
+
